@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historial de Ejecuciones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+  <h2 class="mb-4">📋 Historial de Ejecuciones</h2>
+  <div class="d-flex justify-content-between mb-3">
+    <a href="/" class="btn btn-secondary">⬅ Volver</a>
+    <form action="/borrar_historial" method="POST" onsubmit="return confirm('¿Seguro que deseas borrar todo el historial?')">
+      <button class="btn btn-danger" type="submit">🗑 Borrar Historial</button>
+    </form>
+  </div>
+
+  {% if registros %}
+  <div class="accordion" id="accordionHistorial">
+    {% for registro in registros %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading{{ loop.index }}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
+          {{ registro.fecha }} — {{ registro.funcion }} — {{ registro.metodo }}
+        </button>
+      </h2>
+      <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionHistorial">
+        <div class="accordion-body">
+          <ul>
+            <li><strong>Raíz:</strong> {{ registro.raiz }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="alert alert-info">📭 No hay ejecuciones registradas aún.</div>
+  {% endif %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

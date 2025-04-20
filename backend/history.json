@@ -1,0 +1,32 @@
+[
+  {
+    "fecha": "2025-04-20 18:01:48",
+    "funcion": "cos(x) - x",
+    "metodo": "newton",
+    "raiz": 0.739085
+  },
+  {
+    "fecha": "2025-04-19 15:23:49",
+    "funcion": "cos(x) - x",
+    "metodo": "newton",
+    "raiz": 0.739085
+  },
+  {
+    "fecha": "2025-04-19 15:23:18",
+    "funcion": "x**3 - x - 2",
+    "metodo": "newton",
+    "raiz": 1.52138
+  },
+  {
+    "fecha": "2025-04-19 15:23:12",
+    "funcion": "x**3 - x - 2",
+    "metodo": "newton",
+    "raiz": 1.52138
+  },
+  {
+    "fecha": "2025-04-19 15:05:10",
+    "funcion": "x**3 - x - 2",
+    "metodo": "bisection",
+    "raiz": 1.52138
+  }
+]
