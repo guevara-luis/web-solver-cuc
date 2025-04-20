@@ -167,4 +167,5 @@ def borrar_historial():
     return render_template("historial.html", registros=[])
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Usa el puerto asignado por Render o 5000 por defecto
+    app.run(host="0.0.0.0", port=port)
